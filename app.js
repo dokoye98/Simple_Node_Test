@@ -1,13 +1,9 @@
-const express = require("express")
-const {restart} = require("nodemon")
+const express = require('express')
+const res = require('express/lib/response')
 const app = express()
 
-app.get("/",(res,req)=>{
-    req.send({Message:"This works"})
-
+app.get('/', (req,res)=>{
+    res.send('I just shipped my app to a container!')
 })
 
-
-app.listen(3000,()=>{
-    console.log("running now")
-})
+app.listen(3000)
